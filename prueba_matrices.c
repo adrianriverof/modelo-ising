@@ -1,10 +1,6 @@
 
 #include <stdio.h>
 
-void main() {
-    impimirMatriz3x3();
-}
-
 
 void impimirMatriz3x3(){
     // Declarar una matriz de 3x3
@@ -27,3 +23,9 @@ void impimirMatriz3x3(){
         printf("\n");
     }
 }
+
+
+void main() {
+    impimirMatriz3x3();
+}
+
