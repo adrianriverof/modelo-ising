@@ -1,14 +1,20 @@
 
 
 
-feat: [generar el estado inicial de spines]
+feat: [generar el estado inicial de spines] *]
     crear matriz*]
     mostrar matriz*]
     crear matriz de memoria dinámica*]
 
     pedir entrada por consola*]
 
-    voltear aleatoriamente 
+    voltear aleatoriamente *]
+        __Comprobaciones de estilo con APUNTES__
+            - la memoria se declara así
+            - se habla de la librería rand
+            - 
+            - Como crear una librería propia?
+            - uso de funciones
 
 
 feat: [algoritmo metrópolis]

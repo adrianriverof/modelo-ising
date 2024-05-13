@@ -41,8 +41,6 @@ int main() {
             } else {
                 matriz[i][j] = -1;
             }
-            
-            
         }
     }
 
@@ -54,10 +52,6 @@ int main() {
         }
         printf("\n");
     }
-
-
-
-
 
     // Liberar la memoria asignada dinámicamente
     for (int i = 0; i < L; i++) {
