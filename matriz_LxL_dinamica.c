@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "matriz_LxL_dinamica.h"
+
+
+
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
@@ -14,7 +16,9 @@ int main(int argc, char *argv[]) {
         printf("El tamaño debe ser un entero positivo.\n");
         return 1;
     }
-print_efe();signar memoria dinámicamente para la matriz
+
+
+    // Asignar memoria dinámicamente para la matriz
     int **matriz = (int **)malloc(L * sizeof(int *));
     for (int i = 0; i < L; i++) {
         matriz[i] = (int *)malloc(L * sizeof(int));
@@ -43,10 +47,4 @@ print_efe();signar memoria dinámicamente para la matriz
     free(matriz);
 
     return 0;
-}
-
-void print_efe()
-{
-printf("El tamaño debe ser un entero positivo.\n");
-        
 }
