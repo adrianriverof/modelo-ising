@@ -1,10 +1,24 @@
 
-
 #include <stdio.h>
 
-int main() {
-   printf("hello world")
+void main() {
+    // Declarar una matriz de 3x3
+    int matriz[3][3];
+
+    // Inicializar la matriz
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            matriz[i][j] = 0; // Puedes asignar cualquier valor aquí
+        }
     }
 
-    return 0;
+    // Acceder a elementos de la matriz e imprimirlos
+    printf("Matriz:\n");
+    
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
 }
