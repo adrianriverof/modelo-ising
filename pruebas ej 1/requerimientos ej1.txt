@@ -1,0 +1,23 @@
+
+
+
+feat: [generar el estado inicial de spines]
+    crear matriz*]
+    mostrar matriz*]
+    crear matriz de memoria dinámica*]
+
+    pedir entrada por consola*]
+
+    voltear aleatoriamente 
+
+
+feat: [algoritmo metrópolis]
+    escoger elemento
+    calcular deltaH
+
+    comprobar
+    si no, tirar moneda = r
+
+    comparar r con una expresión
+
+    else
