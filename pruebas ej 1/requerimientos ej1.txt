@@ -27,3 +27,21 @@ feat: [algoritmo metrópolis]
     comparar r con una expresión
 
     else
+
+
+
+
+Codigo C del ejercicio 1 está terminado
+Ahora hay que hacer el resto de codigos
+    - Ej 2
+    - Ej 3
+
+HAcer las redacciones
+Hacer el codigo en Matlab
+
+Los códigos C de los próximos ejercicios se esperan más fáciles
+debido a que son modificaciones sobre esta base
+sería bueno poder estructurar una librería y esas cosas...
+... pero primero vamos a realizarlo todo y ver cuales son los requisitos reales
+
+
