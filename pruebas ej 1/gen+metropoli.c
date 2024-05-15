@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "funciones.h"
+#include <math.h>
 
 
 
@@ -44,7 +44,6 @@ void inicializarMatriz(int **matriz, int L) {
 
 // Función para imprimir la matriz
 void imprimirMatriz(int **matriz, int L) {
-    printf("Matriz de ceros de tamaño %dx%d:\n", L, L);
     for (int i = 0; i < L; i++) {
         for (int j = 0; j < L; j++) {
             printf("%d ", matriz[i][j]);
@@ -53,11 +52,31 @@ void imprimirMatriz(int **matriz, int L) {
     }
 }
 
+// Función para generar un número aleatorio entre 0 y L-1
+int generarNumeroAleatorio(int L) {
+    // Semilla para la función rand() basada en el tiempo actual
+    
+    
+    // Generar un número aleatorio entre 0 y L-1
+    int numAleatorio = rand() % L;
+    
+    return numAleatorio;
+}
+
+
 
 
 // Función principal
 int main() {
+
+    srand(time(NULL));
+
     int L; // Tamaño de la matriz
+    int N = pow(10,4);
+    int iteracion;
+    
+    int i_c; // componentes del elemento a voltear
+    int j_c;
 
     // Pedir al usuario que introduzca el tamaño de la matriz
     printf("Introduce el tamaño de la matriz: ");
@@ -68,24 +87,76 @@ int main() {
         return 1;
     }
 
+
     // Asignar memoria dinámicamente para la matriz
     int **matriz = (int **)malloc(L * sizeof(int *));
     for (int i = 0; i < L; i++) {
         matriz[i] = (int *)malloc(L * sizeof(int));
     }
 
+
     // Inicializar la matriz con números aleatorios
     inicializarMatriz(matriz, L);
 
     // Imprimir la matriz
+    printf("\nmatriz original\n");
     imprimirMatriz(matriz, L);
 
+   
+    for (iteracion = 0; iteracion < N; iteracion++) {
+        // escogemos componentes del elemento a voltear
+        i_c = generarNumeroAleatorio(L);
+        j_c = generarNumeroAleatorio(L);
+        // elemento: matriz[i_c][j_c]
+        printf("\ni = %d\n", i_c);
+        printf("\nj = %d\n", j_c);
+
+        //printf("\nelemento = %d", matriz[i_c][j_c]);
+
+        float sum = 0;
+
+        // sumar teniendo en cuenta los bordes
+        if (i_c == 0){
+            sum += matriz[L-1][j_c];
+        } 
+        else{
+            sum += matriz[i_c-1][j_c];
+        }
+        if (i_c == L-1){
+            sum += matriz[0][j_c];
+        }
+        else{
+            sum += matriz[i_c+1][j_c];
+        }
+
+        if (j_c == 0){
+            sum += matriz[i_c][L-1];
+        }
+        else{
+            sum += matriz[i_c][j_c-1];
+        }
+        if (j_c == L-1){
+            sum += matriz[i_c][0];
+        }
+        else{
+            sum += matriz0[i_c][j_c+1];
+        }
+
+        float deltaH = 2 * matriz[i_c][j_c] * sum ;
+
+        printf("\nDeltaH = %f\n ¿es menor que cero? %d", deltaH, (deltaH<0));
+
+
+
+
+        
+    }
+
+   
+   
+   
+   
     guardarMatrizEnArchivo(matriz, L);
-
-
-
-
-
 
     // Liberar la memoria asignada dinámicamente
     for (int i = 0; i < L; i++) {

@@ -12,7 +12,7 @@ feat: [generar el estado inicial de spines] *]
         __Comprobaciones de estilo con APUNTES__
             - la memoria se declara así
             - se habla de la librería rand
-            - 
+            
             - Como crear una librería propia?
             - uso de funciones
 
