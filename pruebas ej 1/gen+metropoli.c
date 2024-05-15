@@ -80,7 +80,7 @@ int main() {
     const int J = 1;
 
     int L; // Tamaño de la matriz
-    int T; // Temperatura
+    float T; // Temperatura
     int A; // exponente
     int N; // Numero de iteraciones
     int iteracion;
@@ -89,32 +89,19 @@ int main() {
     int j_c;
 
     // Pedir al usuario que introduzca el tamaño de la matriz
-    printf("Introduce el tamaño de la matriz: ");
+    printf("Introduzca L: ");
     scanf("%d", &L);
 
-    if (L <= 0) {
-        printf("El tamaño debe ser un entero positivo.\n");
-        return 1;
-    }
-    // Pedir al usuario que introduzca la Temperatura
-    printf("Introduce la Temperatura: ");
-    scanf("%d", &T);
-
-    if (L <= 0) {
-        printf("La temperatura debe ser un entero positivo.\n");
-        return 1;
-    }
-
     // Pedir al usuario que introduzca el exponente
-    printf("Introduce el exponente del número de pasos: ");
+    printf("Introduzca A: ");
     scanf("%d", &A);
 
-    if (L <= 0) {
-        printf("El exponente debe ser un entero positivo.\n");
-        return 1;
-    }
-    
     N = pow(10,A);
+
+    // Pedir al usuario que introduzca la Temperatura
+    printf("Introduzca T: ");
+    scanf("%f", &T);
+
 
     // Asignar memoria dinámicamente para la matriz
     int **matriz = (int **)malloc(L * sizeof(int *));
@@ -201,8 +188,12 @@ int main() {
    printf("\n\n__Contaje de volteos_\ncontador1= %d \n", contador_volteos1);
    printf("contador2= %d \n", contador_volteos2);
    printf("no volteados= %d \n", contador_no_volteados);
+
+   printf("TOTAL= %d \n", (contador_no_volteados+contador_volteos1+contador_volteos2));
    
-   
+   // Imprimir la matriz procesada
+    printf("\nmatriz procesada\n");
+    imprimirMatriz(matriz, L);
    
     guardarMatrizEnArchivo(matriz, L);
 
