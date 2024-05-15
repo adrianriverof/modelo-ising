@@ -136,8 +136,9 @@ int main() {
         i_c = generarNumeroAleatorio(L);
         j_c = generarNumeroAleatorio(L);
         // elemento: matriz[i_c][j_c]
-        printf("\ni = %d\n", i_c);
-        printf("\nj = %d\n", j_c);
+        
+        //printf("\ni = %d\n", i_c);
+        //printf("\nj = %d\n", j_c);
 
         //printf("\nelemento = %d", matriz[i_c][j_c]);
 
@@ -172,7 +173,7 @@ int main() {
 
         float deltaH = 2 * J* matriz[i_c][j_c] * sum ;
 
-        printf("\nDeltaH = %f\n ¿es menor que cero? %d", deltaH, (deltaH<0));
+        //printf("\nDeltaH = %f\n ¿es menor que cero? %d", deltaH, (deltaH<0));
 
         if (deltaH < 0){
             matriz[i_c][j_c] *= -1; // volteamos el elemento
