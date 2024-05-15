@@ -69,6 +69,11 @@ int generarNumeroAleatorio(int L) {
 // Función principal
 int main() {
 
+    int contador_volteos1 = 0;
+    int contador_volteos2 = 0;
+    int contador_no_volteados =0 ;
+
+
     srand(time(NULL));
 
     const int k_B = 1;
@@ -171,6 +176,7 @@ int main() {
 
         if (deltaH < 0){
             matriz[i_c][j_c] *= -1; // volteamos el elemento
+            contador_volteos1 += 1;
         }
         else{
             float r = (float)rand() / ((float)RAND_MAX + 1);
@@ -178,6 +184,11 @@ int main() {
 
             if (r<P){
                 matriz[i_c][j_c] *= -1; // volteamos el elemento
+                contador_volteos2 += 1;
+            }
+            else{
+                contador_no_volteados += 1;
+
             }
         }
 
@@ -185,7 +196,10 @@ int main() {
         
     }
 
-   
+
+   printf("\n\n__Contaje de volteos_\ncontador1= %d \n", contador_volteos1);
+   printf("contador2= %d \n", contador_volteos2);
+   printf("no volteados= %d \n", contador_no_volteados);
    
    
    
