@@ -71,8 +71,13 @@ int main() {
 
     srand(time(NULL));
 
+    const int k_B = 1;
+    const int J = 1;
+
     int L; // Tamaño de la matriz
-    int N = pow(10,4);
+    int T; // Temperatura
+    int A; // exponente
+    int N; // Numero de iteraciones
     int iteracion;
     
     int i_c; // componentes del elemento a voltear
@@ -86,7 +91,25 @@ int main() {
         printf("El tamaño debe ser un entero positivo.\n");
         return 1;
     }
+    // Pedir al usuario que introduzca la Temperatura
+    printf("Introduce la Temperatura: ");
+    scanf("%d", &T);
 
+    if (L <= 0) {
+        printf("La temperatura debe ser un entero positivo.\n");
+        return 1;
+    }
+
+    // Pedir al usuario que introduzca el exponente
+    printf("Introduce el exponente del número de pasos: ");
+    scanf("%d", &A);
+
+    if (L <= 0) {
+        printf("El exponente debe ser un entero positivo.\n");
+        return 1;
+    }
+    
+    N = pow(10,A);
 
     // Asignar memoria dinámicamente para la matriz
     int **matriz = (int **)malloc(L * sizeof(int *));
@@ -139,14 +162,24 @@ int main() {
             sum += matriz[i_c][0];
         }
         else{
-            sum += matriz0[i_c][j_c+1];
+            sum += matriz[i_c][j_c+1];
         }
 
-        float deltaH = 2 * matriz[i_c][j_c] * sum ;
+        float deltaH = 2 * J* matriz[i_c][j_c] * sum ;
 
         printf("\nDeltaH = %f\n ¿es menor que cero? %d", deltaH, (deltaH<0));
 
+        if (deltaH < 0){
+            matriz[i_c][j_c] *= -1; // volteamos el elemento
+        }
+        else{
+            float r = (float)rand() / ((float)RAND_MAX + 1);
+            float P = exp(-deltaH / (k_B * T));
 
+            if (r<P){
+                matriz[i_c][j_c] *= -1; // volteamos el elemento
+            }
+        }
 
 
         
