@@ -146,12 +146,15 @@ int main() {
             //calculamos m
             int m = 0;
 
+            
+
+
 
 
             // grabamos el valor de la iteracion
-            tabla_salida[contador_10_4][0] = iteracion;
+            tabla_salida[contador_10_4][0] = (float)iteracion;
             // grabamos el valor de m
-            tabla_salida[contador_10_4][1] = m;
+            tabla_salida[contador_10_4][1] = (float)m;
 
             contador_10_4++;
 
@@ -162,7 +165,7 @@ int main() {
 
 
 
-    
+
 
     // guardamos la tabla en un archivo de salida
     FILE *archivo;
