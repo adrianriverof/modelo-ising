@@ -1,6 +1,10 @@
 
 
 
+
+
+
+
 feat: [generar el estado inicial de spines] *]
     crear matriz*]
     mostrar matriz*]
@@ -43,5 +47,18 @@ Los códigos C de los próximos ejercicios se esperan más fáciles
 debido a que son modificaciones sobre esta base
 sería bueno poder estructurar una librería y esas cosas...
 ... pero primero vamos a realizarlo todo y ver cuales son los requisitos reales
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
