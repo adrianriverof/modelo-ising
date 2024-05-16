@@ -4,7 +4,27 @@
 #include <math.h>
 
 
+//guardamos la matriz final en archivo, por si nos apetece revisarlo
+void guardarMatrizEnArchivo(int **matriz, int n) {
+    FILE *archivo;
+    archivo = fopen("matriz.txt", "w"); // Abre el archivo para escritura
 
+    if (archivo != NULL) {
+        
+        // Escribe los elementos de la matriz en el archivo
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                fprintf(archivo, "%d ", matriz[i][j]);
+            }
+            fprintf(archivo, "\n");
+        }
+
+        fclose(archivo); // Cierra el archivo
+        printf("Matriz guardada en el archivo 'matriz.txt'.\n");
+    } else {
+        printf("Error al abrir el archivo.\n");
+    }
+}
 
 
 
@@ -53,7 +73,7 @@ int main() {
     int const L = 50; // Tamaño de la matriz
     float T; // Temperatura
     const int A = 7; // exponente
-    int N = pow(10,A);; // Numero de iteraciones
+    int N = pow(10,A); // Numero de iteraciones
     int iteracion;
     
     int i_c; // componentes del elemento a voltear
@@ -155,14 +175,14 @@ int main() {
             }
 
 
-            m = (float)sum / 10000;
+            m = (float)sum / pow(50,2);
 
 
 
             // grabamos el valor de la iteracion
             tabla_salida[contador_10_4][0] = (float)iteracion;
             // grabamos el valor de m
-            tabla_salida[contador_10_4][1] = (float)m;
+            tabla_salida[contador_10_4][1] = fabs((float)m);
 
             contador_10_4++;
 
@@ -197,7 +217,7 @@ int main() {
 
     printf("\nNúmero de salidas, tiene que ser 1000: %d\n\n\n", contador_10_4);
 
-
+    guardarMatrizEnArchivo(matriz, L);
 
     // Liberar la memoria asignada dinámicamente
     for (int i = 0; i < L; i++) {
