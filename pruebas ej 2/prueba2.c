@@ -144,10 +144,18 @@ int main() {
             //printf("  %d", iteracion);
 
             //calculamos m
-            int m = 0;
+            float m = 0;
 
-            
 
+            int sum = 0;
+            for (int i = 0; i < L; i++) {
+                for (int j = 0; j < L; j++) {
+                    sum += matriz[i][j];
+                }
+            }
+
+
+            m = (float)sum / 10000;
 
 
 
