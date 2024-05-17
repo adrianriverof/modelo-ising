@@ -46,7 +46,18 @@ void inicializarMatriz(int **matriz, int L) {
 void imprimirMatriz(int **matriz, int L) {
     for (int i = 0; i < L; i++) {
         for (int j = 0; j < L; j++) {
-            printf("%d ", matriz[i][j]);
+            int numero = matriz[i][j];
+            if (numero < 0){
+                //printf("%d ", numero);
+                //printf("▓▓");
+                printf("--");
+            }
+            else{
+                //printf(" %d ", numero);
+                //printf("░░");
+                printf("++");
+            }
+            
         }
         printf("\n");
     }
@@ -69,6 +80,11 @@ int generarNumeroAleatorio(int L) {
 // Función principal
 int main() {
 
+    printf("=====================================\n");
+    printf("        Bienvenid@ al Programa       \n");
+    printf("=====================================\n\n");
+
+    printf("Parámetros\n\n");
     int contador_volteos1 = 0;
     int contador_volteos2 = 0;
     int contador_no_volteados =0 ;
@@ -102,6 +118,7 @@ int main() {
     printf("Introduzca T: ");
     scanf("%f", &T);
 
+    printf("\n=====================================\n");
 
     // Asignar memoria dinámicamente para la matriz
     int **matriz = (int **)malloc(L * sizeof(int *));
@@ -202,6 +219,8 @@ int main() {
         free(matriz[i]);
     }
     free(matriz);
+
+    printf("\n=====================================\n");
 
     return 0;
 }
