@@ -197,7 +197,7 @@ int main() {
 
     // guardamos la tabla en un archivo de salida
     FILE *archivo;
-    archivo = fopen("tabla_salida.txt", "w"); // Abre el archivo para escritura
+    archivo = fopen("tabla_salida_ej_2.txt", "w"); // Abre el archivo para escritura
 
     if (archivo != NULL) {
         

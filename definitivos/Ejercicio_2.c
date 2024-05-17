@@ -4,34 +4,9 @@
 #include <math.h>
 
 
-//guardamos la matriz final en archivo, por si nos apetece revisarlo
-void guardarMatrizEnArchivo(int **matriz, int n) {
-    FILE *archivo;
-    archivo = fopen("matriz.txt", "w"); // Abre el archivo para escritura
-
-    if (archivo != NULL) {
-        
-        // Escribe los elementos de la matriz en el archivo
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                fprintf(archivo, "%d ", matriz[i][j]);
-            }
-            fprintf(archivo, "\n");
-        }
-
-        fclose(archivo); // Cierra el archivo
-        printf("Matriz guardada en el archivo 'matriz.txt'.\n");
-    } else {
-        printf("Error al abrir el archivo.\n");
-    }
-}
-
-
-
 // Función para inicializar la matriz con números aleatorios
 void inicializarMatriz(int **matriz, int L) {
     int numeroAleatorio;
-
     for (int i = 0; i < L; i++) {
         for (int j = 0; j < L; j++) {
             numeroAleatorio = rand();
@@ -55,32 +30,38 @@ int main() {
     // semilla aleatoria
     srand(time(NULL)); 
     
+    printf("=====================================\n");
+    printf("             Ejercicio 2             \n");
+    printf("=====================================\n\n");
+
+    printf("Parámetros\n\n");
+
+
 
     int contador_10_4 = 0;
-
-
     float tabla_salida[1000][2];
 
-
-    srand(time(NULL));
-
+    //constantes
     const int k_B = 1;
     const int J = 1;
 
+    //parámetros
     int const L = 50; // Tamaño de la matriz
     float T; // Temperatura
     const int A = 7; // exponente
     int N = pow(10,A); // Numero de iteraciones
-    int iteracion;
+
+    int iteracion; // contador de iteraciones
     
     int i_c; // componentes del elemento a voltear
     int j_c;
 
+
     // Pedir al usuario que introduzca la Temperatura
-    printf("Introduzca T: ");
+    printf("Introduzca temperatura T: ");
     scanf("%f", &T);
 
-    printf("\n...recibido");
+    printf("\n=====================================\n");
 
 
     // Asignar memoria dinámicamente para la matriz
@@ -93,19 +74,13 @@ int main() {
     // Inicializar la matriz con números aleatorios
     inicializarMatriz(matriz, L);
 
-
    
     for (iteracion = 0; iteracion < N; iteracion++) {
 
         // escogemos componentes del elemento a voltear
         i_c = generarNumeroAleatorio(L);
-        j_c = generarNumeroAleatorio(L);
-        // elemento: matriz[i_c][j_c]
-        
-        //printf("\ni = %d\n", i_c);
-        //printf("\nj = %d\n", j_c);
+        j_c = generarNumeroAleatorio(L);        
 
-        //printf("\nelemento = %d", matriz[i_c][j_c]);
 
         float sum = 0;
 
@@ -138,8 +113,6 @@ int main() {
 
         float deltaH = 2 * J* matriz[i_c][j_c] * sum ;
 
-        //printf("\nDeltaH = %f\n ¿es menor que cero? %d", deltaH, (deltaH<0));
-
         if (deltaH < 0){
             matriz[i_c][j_c] *= -1; // volteamos el elemento
             
@@ -157,12 +130,11 @@ int main() {
             }
         }
 
+        // cuando sea múltiplo de 10^4
         if ( (iteracion % 10000 )== 0 ){
-            //printf("  %d", iteracion);
 
             //calculamos m
             float m = 0;
-
 
             int sum = 0;
             for (int i = 0; i < L; i++) {
@@ -181,6 +153,7 @@ int main() {
             // grabamos el valor de m
             tabla_salida[contador_10_4][1] = fabs((float)m);
 
+            //aumentamos el valor de contador de múltiplos de 10^4
             contador_10_4++;
 
 
@@ -207,20 +180,23 @@ int main() {
         }
 
         fclose(archivo); // Cierra el archivo
-        printf("Tabla guardada en el archivo 'tabla_salida.txt'.\n");
+        printf("\n\nTabla guardada en el archivo 'tabla_salida.txt'.\n\n");
     } else {
         printf("Error al abrir el archivo.\n");
     }
 
-    printf("\nNúmero de salidas, tiene que ser 1000: %d\n\n\n", contador_10_4);
 
-    guardarMatrizEnArchivo(matriz, L);
+
 
     // Liberar la memoria asignada dinámicamente
     for (int i = 0; i < L; i++) {
         free(matriz[i]);
     }
     free(matriz);
+
+    printf("\n=====================================\n");
+    printf("           Fin del programa          \n");
+    printf("=====================================\n");
 
     return 0;
 }
