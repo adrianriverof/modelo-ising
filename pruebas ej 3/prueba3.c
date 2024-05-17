@@ -31,6 +31,7 @@ void inicializarMatriz(int **matriz, int L) {
 
 // Función para generar un número aleatorio entre 0 y L-1
 int generarNumeroAleatorio(int L) {
+    //srand(time(NULL));
     // Semilla para la función rand() basada en el tiempo actual
     
     
@@ -87,6 +88,7 @@ int main() {
 
     // vamos cambiando la temperatura
     for (T = 1.25; T <= 2.25; T += 0.1 ){
+        
 
         //imprimirProgreso((float)iteracion_T / 11);
 
@@ -187,7 +189,9 @@ int main() {
 
             m = (float)sum / 100;
 
-            m_media += m/5000;
+            m_media += fabs(m)/5000;
+            //printf("\nm = %f\r", m);
+            //fflush(stdout);
             //printf("\nm = %f", m);
         }
         printf("\n m media: %f", m_media);
