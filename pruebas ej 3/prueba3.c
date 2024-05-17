@@ -4,6 +4,16 @@
 #include <math.h>
 
 
+void imprimirProgreso(float progreso) {
+    int barLength = 20;
+    printf("[");
+    int progressLength = (int)(progreso * barLength);
+    for (int i = 0; i < barLength; i++) {
+        printf(i < progressLength ? "=" : " ");
+    }
+    printf("] %.2f%%\r", progreso * 100);
+    fflush(stdout); // Limpiar el buffer de salida para imprimir inmediatamente
+}
 
 // Función para inicializar la matriz con números aleatorios
 void inicializarMatriz(int **matriz, int L) {
@@ -78,18 +88,20 @@ int main() {
     // vamos cambiando la temperatura
     for (T = 1.25; T <= 2.25; T += 0.1 ){
 
+        //imprimirProgreso((float)iteracion_T / 11);
+
         printf("\n ahora mostramos la temperatura ");
         printf("\n Temperatura = %f", T);
         // grabamos el valor de la temperatura
         tabla_salida[iteracion_T][0] = T;
         tabla_salida[iteracion_T][1] = 0; 
-        printf("\n debería haber terminado de mostrar la temperatura ");
+        printf("\n\n\n  ");
 
         int iteracion_para_media;
         float m_media = 0;
 
         for (iteracion_para_media = 0; iteracion_para_media < 5000; iteracion_para_media++){
-            
+            imprimirProgreso((float)iteracion_para_media / 5000);
             //mostramos progreso del contaje
             if (iteracion_para_media % 100 == 0){
                 printf(".");
