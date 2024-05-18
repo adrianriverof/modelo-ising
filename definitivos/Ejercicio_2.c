@@ -167,7 +167,7 @@ int main() {
 
     // guardamos la tabla en un archivo de salida
     FILE *archivo;
-    archivo = fopen("tabla_salida.txt", "w"); // Abre el archivo para escritura
+    archivo = fopen("tabla_salida_ej_2.txt", "w"); // Abre el archivo para escritura
 
     if (archivo != NULL) {
         
@@ -180,7 +180,7 @@ int main() {
         }
 
         fclose(archivo); // Cierra el archivo
-        printf("\n\nTabla guardada en el archivo 'tabla_salida.txt'.\n\n");
+        printf("\n\nTabla guardada en el archivo 'tabla_salida_ej_2.txt'.\n\n");
     } else {
         printf("Error al abrir el archivo.\n");
     }
