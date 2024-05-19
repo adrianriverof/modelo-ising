@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1716135076 "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.tex" "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.pdf" "informe" 1716135076
+["pdflatex"] 1716135948 "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.tex" "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.pdf" "informe" 1716135948
   "../obtencion_resultados/a.png" 1716026620 6490 78b7c97426e3c045403e7092f14acfcb ""
   "../obtencion_resultados/b.png" 1716026856 4191 14b379c1444b50814608353f792873f1 ""
   "../obtencion_resultados/c.png" 1716026909 6644 fc8b26792d805682956b3b17dd29523e ""
@@ -13,9 +13,9 @@
   "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/../obtencion_resultados/d.png" 1716027306 7962 47f7d7b62f07ff630f186b64f452cd40 ""
   "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/../obtencion_resultados/grafica_ej2_marcadores_grande.png" 1716133681 181392 d2fc3f3752de5f6da7f28cdbd888c536 ""
   "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/../obtencion_resultados/grafica_ej3.png" 1716027439 21753 461055736b5bbd3c3f147716f605502b ""
-  "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.aux" 1716135076 3719 e4bae619e35020fb2f773b7725f69b2c "pdflatex"
-  "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.out" 1716135076 1224 bb3fd37aed3fa6b8a63bc0d8ccbc85fe "pdflatex"
-  "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.tex" 1716135076 10579 f78f35cd3a2447a584976c23653adacf ""
+  "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.aux" 1716135948 3719 e4bae619e35020fb2f773b7725f69b2c "pdflatex"
+  "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.out" 1716135948 1224 bb3fd37aed3fa6b8a63bc0d8ccbc85fe "pdflatex"
+  "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.tex" 1716135947 10565 462ebe4fe800f7e8fcfc17c6766216eb ""
   "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/noNumberPage.tex" 0 -1 0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1136768653 3584 13049b61b922a28b158a38aeff75ee9b ""
@@ -165,6 +165,6 @@
   (generated)
   "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/noNumberPage.aux"
   "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.out"
-  "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.aux"
-  "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.log"
   "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.pdf"
+  "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.log"
+  "/home/adrian/Escritorio/Fisica Computacional I/PEC/codigos/latex/informe.aux"

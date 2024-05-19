@@ -7,11 +7,11 @@
 
 datos = load(['tabla_salida_ej_3.txt']);
 
-% Extraemos las columnas x e y de los datos
+% Extraer las columnas x e y de los datos
 x = datos(:, 1);
 y = datos(:, 2);
 
-% preparamos vectores para Onsager
+% preparar vectores para Onsager
 x_ons = linspace(1.25, 2.25, 100);
 y_ons = zeros(size(x_ons));
 
@@ -24,12 +24,12 @@ end
 figure;
 hold on; 
 
-% Trazamos la gráfica
+% Trazar la gráfica
 plot(x_ons, y_ons, '-', "Color","b"); % representamos Onsager
 plot(x, y, 'o--', "Color","r"); % representamos nuestros datos
 xlabel('Temperatura'); 
 ylabel('Magnetización');
-title(''); % sin título
+title(''); 
 grid on; 
 
 legend({'Onsager', 'Propios'}, 'Location', 'best');
