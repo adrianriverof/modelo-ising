@@ -1,8 +1,8 @@
 
+
 %USO: este código lee 6 tablas y devuelve una gráfica
 %las tablas corresponden a las temperaturas pedidas, los archivos deben ser
-%progresivamente calculados con Ejercicio_2.c y renombrados
-%progresivamente.
+%calculados con Ejercicio_2.c y renombrados progresivamente.
 
 
 
@@ -18,14 +18,22 @@ tabla6 = readmatrix("3_0.txt");
 tablas = {tabla1, tabla2, tabla3, tabla4, tabla5, tabla6};
 
 
-figure;
+% Define el tamaño de la figura (en píxeles)
+ancho = 1200; % Ancho en píxeles
+alto = 800;  % Alto en píxeles
+
+figure('Position', [100, 100, ancho, alto]); % Crea la figura con el tamaño especificado
+
 colores = {'r', 'g', 'b', 'm', 'c', 'y'};
+marcadores = {'o', 's', '^', 'd', 'v', '>'}; % distintos marcadores para cada temperatura NO UTILIZADO
+estilosLinea = {'-', '--', ':', '-.', '-', '--'}; % distintos estilos de línea para cada temperatura NO UTILIZADO
+
 
 hold on; % Para superponer las gráficas
 
 % Itera sobre cada matriz y traza los puntos en la figura con plot
 for i = 1:6
-    plot(tablas{i}(:,1), tablas{i}(:,2), '-', 'Color', colores{i}); % plot para trazar puntos
+    plot(tablas{i}(:,1), tablas{i}(:,2), 'Color', colores{i}, 'LineStyle', estilosLinea{i}, 'Marker', marcadores{i});
 end
 xlabel('Pasos'); 
 ylabel('Magnetización');

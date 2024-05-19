@@ -1,0 +1,76 @@
+
+
+\documentclass[a4paper,12pt,spanish]{article}
+
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{blindtext}
+%\usepackage{microtype}
+\usepackage{amsfonts, amsmath, amsthm, amssymb}
+%\usepackage{fancyhdr}
+%\usepackage{index}
+%\usepackage{multicol}    
+
+%\usepackage{booktabs}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{url}
+\usepackage{enumitem}
+
+\usepackage[unicode=true, pdfusetitle,
+bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+breaklinks=true,pdfborder={0 0 1},backref=false,colorlinks=false]
+{hyperref}
+
+\usepackage{listings}
+\usepackage{longtable}
+
+
+\usepackage{siunitx} %para el sistema internacional
+\usepackage[export]{adjustbox}
+\usepackage{booktabs} 
+\usepackage{subcaption}
+
+\usepackage{float}
+
+
+\newcommand{\address}[1]{
+	\par {\raggedright #1
+		\vspace{1.4em}
+		\noindent\par}
+}
+
+\usepackage[table,xcdraw]{xcolor}
+
+
+\pagenumbering{gobble}
+\include{noNumberPage}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%tutorial de tablas latex: https://manualdelatex.com/tutoriales/tablas
+
+\usepackage{multirow}
+
+% \usepackage[table,xcdraw]{xcolor}
+
+
+%Inicio del documento (hasta que se cierre con \end{document}
+\begin{document}
+	
+	
+	
+	\section*{Anexo: sobre los programas y representaciones}
+	
+	Quería hacer algunas anotaciones al códigos presentados. En primer lugar, planteé la opción de crear librerías con funciones recurrentes, pero para el alcance de estos ejercicios, encontré mucho más práctico simplemente copiar a mano algunas funciones. También había algunos procesos que acababan teniendo que ser modificados de un ejercicio a otro, así que apenas he utilizado declaración de funciones y está todo principalmente en la función main().\\
+	
+	
+	
+	En segundo lugar, para transferir los datos entre C y matlab, he utilizado \textit{.txt} de salida. He guardado los utilizados en el documento, de modo que pueden consultarlos y utilizarlos desde la carpeta \textit{'archivos\_de\_salida'} en el comprimido. También se han incluido los programas compilados (Linux).
+	
+	
+\end{document}
